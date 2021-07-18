@@ -20,7 +20,10 @@ app.get('/question/:questionId', (req, res) => {
 
     res.json(data.questions[qeustionId]);
   });
-
 });
 
-app.listen(3000);
+app.get('/results', (req, res) => {
+  res.sendFile(path.join(__dirname, '/data', 'result.json'));
+});
+
+app.listen(3030);
